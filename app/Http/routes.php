@@ -16,6 +16,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
+    'cines' => 'PuntosController',
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
