@@ -21,5 +21,10 @@ class PuntosController extends Controller {
             $cines = DB::select("select name, ST_ASTEXT(way) from planet_osm_point where ST_DWithin(way, ST_GeographyFromText('SRID=4326;POINT($lon $lat)'), 3000) and name like '%Cine%'");
             return response()->json($cines,200);
         }
+
     }
+
+
+
+
 }
