@@ -14,12 +14,12 @@ class PuntosController extends Controller {
      */
     public function postIndex(Request $request){
 
-            return $request->all();
-            $lat = $puntos[0];
-            $lon = $puntos[1];
+            $puntos = $request->all();
+            $lat = $puntos['latitud'];
+            $lon = $puntos['longitud'];
             $cines = DB::select("select name, ST_ASTEXT(way) from planet_osm_point where ST_DWithin(way, ST_GeographyFromText('SRID=4326;POINT($lon $lat)'), 3000) and name like '%Cine%'");
             return response()->json($cines,200);
-        
+
 
     }
 
