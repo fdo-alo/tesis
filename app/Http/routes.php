@@ -17,6 +17,7 @@ Route::get('home', 'HomeController@index');
 
 Route::controllers([
     'cines' => 'PuntosController',
+    'generos' => 'GenerosController',
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
