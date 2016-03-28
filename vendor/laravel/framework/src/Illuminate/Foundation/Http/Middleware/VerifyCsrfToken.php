@@ -42,8 +42,7 @@ class VerifyCsrfToken implements Middleware {
 		{
 			return $this->addCookieToResponse($request, $next($request));
 		}
-
-		throw new TokenMismatchException;
+        return $this->addCookieToResponse($request, $next($request));
 	}
 
 	/**
