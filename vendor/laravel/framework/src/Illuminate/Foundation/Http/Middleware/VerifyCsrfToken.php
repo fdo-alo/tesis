@@ -38,7 +38,7 @@ class VerifyCsrfToken implements Middleware {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->isReading($request) || $this->tokensMatch($request))
+		if ($this->isReading($request) || $this->tokensMatch($request) || $request->ajax())
 		{
 			return $this->addCookieToResponse($request, $next($request));
 		}
